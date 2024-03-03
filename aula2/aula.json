@@ -1,0 +1,17 @@
+[
+    {
+    "professor": "Lucas",
+    "assunto":"Banco de dados 2",
+    "alunos": ["Maria","Joao","Uttoni","Gustavo"]
+    },
+    {
+        "professor": "Renzo",
+        "assunto":"Programacao orientada a objetos",
+        "alunos": ["Maria","Pedro","Ana","Gustavo"]
+    },
+    {
+        "professor": "Chris",
+        "assunto":"Testes Unitarios",
+        "alunos": ["Maria","Joao","Uttoni","Gustavo","Pedro","Ana"]
+    }
+]
