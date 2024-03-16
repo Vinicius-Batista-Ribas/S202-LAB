@@ -1,21 +1,12 @@
 [
     {
-        "_id": "Bolacha"
-    },
-    {
-        "_id": "Refrigerante"
-    },
-    {
-        "_id": "Carne"
-    },
-    {
-        "_id": "Macarrão"
-    },
-    {
         "_id": "Cerveja"
     },
     {
-        "_id": "Detergente"
+        "_id": "Feijão"
+    },
+    {
+        "_id": "Mussarela"
     },
     {
         "_id": "Sabonete"
@@ -27,18 +18,27 @@
         "_id": "Maçã"
     },
     {
-        "_id": "Feijão"
-    },
-    {
-        "_id": "Mussarela"
-    },
-    {
         "_id": "Banana"
+    },
+    {
+        "_id": "Laranja"
     },
     {
         "_id": "Tomate"
     },
     {
-        "_id": "Laranja"
+        "_id": "Carne"
+    },
+    {
+        "_id": "Macarrão"
+    },
+    {
+        "_id": "Bolacha"
+    },
+    {
+        "_id": "Refrigerante"
+    },
+    {
+        "_id": "Detergente"
     }
 ]
