@@ -6,7 +6,6 @@ class ProductAnalyzer:
             {"$group": {"_id": "$data_compra", "vendas_por_dia": {"$sum":1}}},
         ])
         
-       
         return result
        
        def ProdutoMaisVendido(self, db:Database):
