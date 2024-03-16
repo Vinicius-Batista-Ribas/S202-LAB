@@ -2,11 +2,11 @@ from database import Database
 
 class ProductAnalyzer:
        def VendasPorDia(self,db: Database):
-        result = db.collection.aggregate([
-            {"$group": {"_id": "$data_compra", "vendas_por_dia": {"$sum":1}}},
-        ])
-        
-        return result
+            result = db.collection.aggregate([
+                {"$group": {"_id": "$data_compra", "vendas_por_dia": {"$sum":1}}},
+            ])
+            
+            return result
        
        def ProdutoMaisVendido(self, db:Database):
             result = db.collection.aggregate([
