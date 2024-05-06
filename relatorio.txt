@@ -1,0 +1,62 @@
+1) 
+. MATCH (a) return a
+.MATCH (g:Game) WHERE g.ano > 2012 RETURN g;
+. MATCH (g:Game) WHERE g.genero = 'Terror' RETURN g;
+. MATCH (:Jurado)-[r:JOGOU]->(g:Game) WHERE r.nota >= 7 RETURN g;
+
+
+2)
+
+adicionando jogos
+CREATE(g:Game{titulo:'The Witcher 3: Wild Hunt', genero:'RPG', ano:2015});
+CREATE(g:Game{titulo:'Among Us', genero:'Party', ano:2018});
+CREATE(g:Game{titulo:'Cyberpunk 2077', genero:'RPG', ano:2020});
+CREATE(g:Game{titulo:'Assassin\'s Creed Valhalla', genero:'Aventura', ano:2020});
+
+adicionando jurados
+CREATE(j:Jurado{nome:'Lucas'});
+CREATE(j:Jurado{nome:'Mariana'});
+CREATE(j:Jurado{nome:'Fernanda'});
+
+
+relacoes
+// Relações entre jurados e jogos
+MATCH (j:Jurado{nome:'Ewel'}), (g:Game{titulo:'Warzone'})
+CREATE (j)-[:JOGOU{nota:10, horas:500}]->(g);
+
+MATCH (j:Jurado{nome:'Ewel'}), (g:Game{titulo:'League of Legends'})
+CREATE (j)-[:JOGOU{nota:10, horas:1000}]->(g);
+
+MATCH (j:Jurado{nome:'Gabriel'}), (g:Game{titulo:'Warzone'})
+CREATE (j)-[:JOGOU{nota:6, horas:156}]->(g);
+
+MATCH (j:Jurado{nome:'Gabriel'}), (g:Game{titulo:'Minecraft'})
+CREATE (j)-[:JOGOU{nota:10, horas:200}]->(g);
+
+MATCH (j:Jurado{nome:'Gabriel'}), (g:Game{titulo:'League of Legends'})
+CREATE (j)-[:JOGOU{nota:9, horas:10000}]->(g);
+
+MATCH (j:Jurado{nome:'Davi'}), (g:Game{titulo:'Minecraft'})
+CREATE (j)-[:JOGOU{nota:10, horas:12000}]->(g);
+
+MATCH (j:Jurado{nome:'Davi'}), (g:Game{titulo:'Phasmophobia'})
+CREATE (j)-[:JOGOU{nota:5, horas:2}]->(g);
+
+// Relações entre novos jurados e jogos
+MATCH (j:Jurado{nome:'Lucas'}), (g:Game{titulo:'The Witcher 3: Wild Hunt'})
+CREATE (j)-[:JOGOU{nota:9, horas:800}]->(g);
+
+MATCH (j:Jurado{nome:'Lucas'}), (g:Game{titulo:'Cyberpunk 2077'})
+CREATE (j)-[:JOGOU{nota:8, horas:400}]->(g);
+
+MATCH (j:Jurado{nome:'Mariana'}), (g:Game{titulo:'Among Us'})
+CREATE (j)-[:JOGOU{nota:7, horas:50}]->(g);
+
+MATCH (j:Jurado{nome:'Mariana'}), (g:Game{titulo:'Phasmophobia'})
+CREATE (j)-[:JOGOU{nota:8, horas:100}]->(g);
+
+MATCH (j:Jurado{nome:'Fernanda'}), (g:Game{titulo:'Assassin\'s Creed Valhalla'})
+CREATE (j)-[:JOGOU{nota:9, horas:600}]->(g);
+
+MATCH (j:Jurado{nome:'Fernanda'}), (g:Game{titulo:'The Witcher 3: Wild Hunt'})
+CREATE (j)-[:JOGOU{nota:10, horas:800}]->(g);

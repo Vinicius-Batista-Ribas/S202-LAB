@@ -1,0 +1,47 @@
+AGREGACAO
+
+MATCH (n) 
+RETURN count(n) AS total_nodes;
+
+MATCH (a:Airport) 
+RETURN count(a) AS total_aeroportos;
+
+MATCH (a:Airport)
+WHERE a.runways > 5
+RETURN sum(a.runways) AS total_pistas_de_pouso;
+
+MATCH (a:Airport)
+RETURN avg(a.pagerank) AS average_pagerank;
+
+MATCH (a:Airport)
+RETURN a.descr, max(a.runways) AS max_runways;
+
+
+MATEMATICAS
+
+MATCH (a:Airport)
+WITH a, a.altitude * a.longest AS area
+RETURN a.descr, area AS coverage_area;
+
+MATCH (a:Airport)
+RETURN SUM(a.altitude) AS total_altitude
+
+MATCH (a:Airport)
+WITH MAX(a.altitude) AS max_altitude
+MATCH (airport:Airport {altitude: max_altitude})
+RETURN airport.city AS city_with_highest_altitude, max_altitude
+
+MATCH (a:Airport)
+RETURN SUM(a.runways) AS total_runways
+
+STRING
+
+MATCH (a:Airport)
+RETURN a.iata + ' (' + a.icao + ')' AS iata_icao_concatenated
+
+MATCH (a:Airport)
+WHERE a.iata STARTS WITH 'A'
+RETURN a.city, a.iata
+
+MATCH (a:Airport)
+RETURN a.city, toUpper(a.icao) AS uppercase_icao
